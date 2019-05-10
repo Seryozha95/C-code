@@ -62,6 +62,37 @@ node* shuffle(node* list) {
   return odd_first;
 }
 
+node* shuffleN(node* list, int n) {
+  if(list == NULL) {
+    return list;
+  }
+  node** new_array = (node**) malloc(n*sizeof(node));
+  node** first_points = (node**) malloc(n*sizeof(node));
+  int i = 0;
+  while (list != NULL) {
+    node* temp = (node*) malloc(sizeof(node));
+    temp->data = list->data;
+    temp->next = NULL;
+    if (new_array[i] == NULL) {
+      first_points[i] = temp;
+    } else {
+      new_array[i]->next = temp;
+    }
+    new_array[i] = temp;
+    list = list->next;
+    i++;
+    if(i > n -1) {
+      i = 0;
+    }
+  }
+  i = 0;
+  while (i < n) {
+    new_array[i]->next = first_points[i+1];
+    i++;
+  }
+  return first_points[0];
+}
+
 void print(node* list) {
 	while (list != NULL) {
 		printf("%p: ->: %d ", list, list->data);

@@ -5,7 +5,7 @@
 int main()
 {
 	node *list = NULL;
-	list = initialize(list, 5);
+	list = initialize(list, 15);
 	printf("Initialize\n");
 	print(list);
 	list = reverse(list);
@@ -13,6 +13,8 @@ int main()
 	print(list);
 	printf("Shuffled version:\n");
 	list = shuffle(list);
+	printf("Shuffled N version:\n");
+	list = shuffleN(list, 3);
 	print(list);
 	return 0;
 }
