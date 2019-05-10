@@ -5,10 +5,10 @@
 node* initialize(node* list, int n) {
 	while (n > 0) {
 		node* temp = (node*) malloc(sizeof(node));
-    temp->next = list;
-    temp->data = n;
-    list = temp;
-    n--;
+		temp->next = list;
+		temp->data = n;
+		list = temp;
+		n--;
 	}
 	return list;  
 }
