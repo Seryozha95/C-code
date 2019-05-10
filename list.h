@@ -9,4 +9,6 @@ node* initialize(node* list, int n);
 node* reverse(node *list);
 node* shuffle(node* list);
 node* shuffleN(node* list, int n);
+node *reverseNRecursive(node *list, int n);
+node *reverseN(node *list, int n);
 void print(node* list);
