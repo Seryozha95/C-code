@@ -15,5 +15,8 @@ int main() {
 	print(v);
 	i = *get(v, 0);
 	printf("%s: -> %d\n", "Item is" , i);
+	printf("Reverse\n");
+	reverseN(v, 2);
+	print(v);
 	return 0;
 }

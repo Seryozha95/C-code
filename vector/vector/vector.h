@@ -17,6 +17,7 @@ void add(vector* v, int value);
 void insert(vector* v, int value, unsigned int index);
 void delete(vector* v, unsigned int index);
 int* get(vector* v, unsigned int index);
+void reverseN(vector* v, int n);
 void resize(vector* v, int capacity);
 void print(vector * v);
 #endif

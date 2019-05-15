@@ -13,7 +13,7 @@ vector* vector_init() {
 	vector *v = (vector *) malloc(sizeof(vector));
 	v->capacity = VECTOR_INIT_CAPACITY;
 	v->length = 0;
-	v->items = malloc(sizeof(int) * v->capacity);
+	v->items = calloc(v->capacity, sizeof(int));
 	return v;
 }
 
@@ -70,6 +70,24 @@ void resize(vector* v, int capacity) {
 	if(items) {
 		v->items = items;
 		v->capacity = capacity;
+	}
+}
+
+void reverseN(vector* v, int n) {
+	int i = 0;
+	int position = 0;
+	int buff_index = n - 1;
+	while(i < n/2 && position < v->length) {
+		int buff = v->items[buff_index];
+		v->items[buff_index] = v->items[position];
+		v->items[position] = buff;
+		position++;
+		buff_index--;
+		if (++i >= n/2 && position < v->length - 1) {
+				position += n - i;
+				buff_index =  position + (n - i) >= v->length -1 ? v->length -1 :  position + n - 1;
+				i = 0;
+		}
 	}
 }
 
