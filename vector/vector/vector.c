@@ -84,9 +84,9 @@ void reverseN(vector* v, int n) {
 		position++;
 		buff_index--;
 		if (++i >= n/2 && position < v->length - 1) {
-				position += n - i;
-				buff_index =  position + (n - i) >= v->length -1 ? v->length -1 :  position + n - 1;
-				i = 0;
+			position += n - i;
+			buff_index =  position + (n - i) >= v->length -1 ? v->length -1 :  position + n - 1;
+			i = 0;
 		}
 	}
 }
