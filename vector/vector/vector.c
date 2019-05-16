@@ -91,3 +91,33 @@ void reverseN(vector* v, int n) {
 	}
 }
 
+void quick_sort(vector* v, int start, int end) {
+	int s0 = start;
+	int e0 = end;
+	int pivot = v->items[end/2];
+	while(s0 < e0) {
+		while(v->items[s0] < pivot) {
+			s0++;
+		}
+		while(v->items[e0] > pivot) {
+			e0--;
+		} 
+		swap(v, s0, e0);
+		s0++;
+		e0--;
+	}
+
+	if (e0 > start) {
+		quick_sort(v, start, e0);
+	}
+	if (s0 < end) {
+		quick_sort(v, s0, end);
+	}
+}
+
+void swap(vector* v, int start, int end) {
+	int buff = v->items[start];
+	v->items[start] = v->items[end];
+	v->items[end] = buff;
+}
+

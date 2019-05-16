@@ -18,5 +18,8 @@ int main() {
 	printf("Reverse\n");
 	reverseN(v, 2);
 	print(v);
+	printf("Sort\n");
+	quick_sort(v, 0, 20);
+	print(v);
 	return 0;
 }
